@@ -9,6 +9,7 @@
 7. In your terminal run `php artisan key:generate`
 8. Run `php artisan migrate --seed` to create the database tables and seed the roles and users tables
 9. Run `php artisan storage:link` to create the storage symlink (if you are using **Vagrant** with **Homestead** for development, remember to ssh into your virtual machine and run the command from there).
+10. Run `php artisan serve`
 
 ## Demo Account
 Email : admin@qwords.com
