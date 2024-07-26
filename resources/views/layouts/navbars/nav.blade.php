@@ -5,6 +5,18 @@
       <ul class="navbar-nav ms-auto">
         @if (auth()->user())
         <li class="nav-item">
+        <a class="nav-link me-2" href="{{ url('dashboard') }}">
+        <i class="fa fa-globe opacity-6 me-1 {{ (Request::is('dashboard') ? '' : 'text-dark') }}"></i>
+            Cek Domain
+          </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link me-2" href="{{ url('order/' . Auth::user()->id) }}">
+        <i class="fa fa-file opacity-6 me-1 {{ (Request::is('order') ? '' : 'text-dark') }}"></i>
+            Order
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link me-2" href="{{ url('logout') }}">
             <i class="fa fa-user opacity-6 me-1 {{ (Request::is('logout') ? '' : 'text-dark') }}"></i>
             Logout
@@ -12,6 +24,12 @@
         </li>
         @endif
         @if (!auth()->user())
+        <li class="nav-item">
+        <a class="nav-link me-2" href="{{ url('/') }}">
+        <i class="fa fa-globe opacity-6 me-1 {{ (Request::is('/') ? '' : 'text-dark') }}"></i>
+            Cek Domain
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link me-2" href="{{ auth()->user() ? url('static-sign-up') : url('register') }}">
             <i class="fas fa-user-circle opacity-6 me-1 {{ (Request::is('static-sign-up') ? '' : 'text-dark') }}"></i>
